@@ -1,8 +1,8 @@
 # EXPERIMENT-06-Data-Publishing-to-IoT-Broker-Using-MQTT3
- ## NAME:
- ## REGISTER NUMBER:
- ## DEPARTMENT:
- ## YEAR:
+ ## NAME:NAKUL R
+ ## REGISTER NUMBER:212223240102
+ ## DEPARTMENT:AIML
+ ## YEAR:II
  ## Aim:
 To publish data to an IoT broker using the MQTT protocol.
 
@@ -70,15 +70,29 @@ Message 'Hello, MQTT!' published to topic 'test/topic'
 Broker Message: The message "Hello, MQTT!" will be published to the topic test/topic.
 
 ## Python Code 
-
-
-  
-
-
-
-
+      !pip install paho-mqtt
+      import paho.mqtt.client as mqtt
+      broker_address = "broker.hivemq.com"
+      broker_port = 1883
+      topic = "test/topic"
+      client = mqtt.Client()
+      client.connect(broker_address, broker_port, keepalive=60)
+      message = "Hello, MQTT"
+      client.publish(topic, message)
+      client.disconnect()
+      print(f"Message '{message}' published to topic '{topic}' ")
+      broker_address = "broker.hivemq.com"
+      broker_port = 1883
+      topic = "test/topic"
+      client = mqtt.Client()
+      client.connect(broker_address , broker_port , keepalive = 60)
+      message = "Hello , MQTT"
+      client.publish(topic,message)
+      client.disconnect()
+      print(f"Message '{message}' publish to topic '{topic}' ")
  ## Simulation Screenshots:
-(Add screenshots of the MQTT client showing the message subscription and the message published on the broker.)
+![image](https://github.com/user-attachments/assets/8dde0ce8-dd38-415f-a9d1-78f67492a5cc)
+![image](https://github.com/user-attachments/assets/a38afdc0-8127-4e65-a344-a7bb607dfbb2)
 
  ## Results:
 The data was successfully published to the MQTT broker. The experiment demonstrated how to use the MQTT protocol to transfer data to an IoT broker, enabling remote communication between devices or applications. The message was confirmed to be received by the topic, and this communication can be extended to more complex IoT systems.
